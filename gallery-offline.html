@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Clark and Wolcott</title>
+<style>
+  :root { --fire:#d4622a; --cream:#f4e9d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Times New Roman",Georgia,serif; background:#1a1410; color:var(--cream); }
+  header { text-align:center; padding:54px 16px 22px;
+            background:radial-gradient(circle at 50% 0%, #3a1d0e 0%, #1a1410 72%); }
+  header h1 { margin:0; font-size:2.4rem; letter-spacing:.08em; color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.6); }
+  header p { margin:10px auto 0; max-width:640px; color:#cdbba6; font-size:1.05rem; }
+  .grid { column-count:4; column-gap:14px; padding:28px 22px 30px; max-width:1280px; margin:0 auto; }
+  .g-card { margin:0 0 14px; break-inside:avoid; border-radius:6px; overflow:hidden;
+            box-shadow:0 6px 18px rgba(0,0,0,.45); background:#241a12; }
+  .g-card img { display:block; width:100%; height:auto; transition:transform .35s ease, filter .35s ease; }
+  .g-card:hover img { transform:scale(1.04); filter:brightness(1.08); }
+  @media (max-width:1100px){ .grid{column-count:3;} }
+  @media (max-width:760px){ .grid{column-count:2;} }
+  @media (max-width:460px){ .grid{column-count:1;} }
+  footer { text-align:center; padding:26px 16px 40px; color:#8c7a66; font-size:.9rem; border-top:1px solid #2c2016; }
+  footer a { color:var(--fire); text-decoration:none; }
+</style>
+  <style id="cw-navfix">
+   /* Offline fix: Wix dropdown runtime is dead offline; make the "More Masonry
+      pages" submenu toggle via plain JS/CSS. !important needed to beat the
+      inline style="display:none" Wix puts on the submenu <ul>. */
+   li.wixui-dropdown-menu__item{ position:relative; cursor:pointer; }
+   li.wixui-dropdown-menu__item > ul[aria-hidden]{ display:none !important; position:absolute;
+     left:0; top:100%; z-index:60; background:#1a1410; border:1px solid #3a2a1c;
+     border-radius:6px; padding:6px 0; min-width:210px; list-style:none; margin:0;
+     box-shadow:0 8px 24px rgba(0,0,0,.55); }
+   li.wixui-dropdown-menu__item.cw-menu-open > ul[aria-hidden]{ display:block !important; }
+   li.wixui-dropdown-menu__item > ul[aria-hidden] a{ display:block; padding:8px 16px;
+     color:#f4e9d8; text-decoration:none; font-family:"Times New Roman",Georgia,serif; }
+   li.wixui-dropdown-menu__item > ul[aria-hidden] a:hover{ background:#2c2016; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gallery</h1>
+    <p>Below is a variety of works done by Clark &amp; Wolcott.</p>
+  </header>
+  <main class="grid">
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565071153516783.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565072516849980.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565072583516640.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565072713516627.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565072900183275.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074170183148.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074243516474.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074393516459.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074536849778.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074650183100.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074726849759.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565074843516414.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565075003516398.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565075226849709.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565076036849628.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565076166849615.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565076286849603.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565076350182930.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565076483516250.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565077126849519.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565077513516147.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565081530182412.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565084536848778.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565084863515412.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565085840181981.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565085876848644.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_565086193515279.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_566070276750204.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_566070776750154.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_566074796749752.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_604815522875679.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_604816069542291.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_604816172875614.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_604816266208938.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767344183289478.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767344626622767.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767345036622726.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767345906622639.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767345923289304.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767345929955970.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767345956622634.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767345989955964.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346009955962.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346026622627.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346123289284.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346169955946.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346226622607.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346256622604.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346333289263.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346359955927.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346366622593.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346396622590.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346423289254.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346476622582.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346516622578.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346609955902.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346643289232.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346699955893.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346723289224.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346753289221.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346773289219.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346803289216.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346826622547.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346846622545.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346873289209.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346896622540.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767346959955867.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347009955862.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347043289192.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347056622524.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347076622522.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347096622520.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347139955849.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347166622513.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347229955840.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347243289172.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347266622503.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347283289168.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347299955833.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347339955829.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347356622494.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347386622491.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347423289154.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347446622485.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347479955815.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347503289146.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347543289142.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347556622474.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347569955806.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347599955803.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347613289135.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347633289133.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767347653289131.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767349126622317.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_767349206622309.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/photo_782751201748776.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/72c23c_38bb768fab7d4ec4a2aa22d8f27f2247-mv2.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_1124789034211656.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_1339999222690635.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_565072403516658.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_565074116849820.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_565076013516297.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_565078383516060.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_565081490182416.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_566070256750206.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_604815509542347.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_767345879955975.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_767349049955658.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_783199695037260.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+      <figure class="g-card">
+        <img loading="lazy" src="/images/gallery/cover_783201935037036.jpg" alt="Clark &amp; Wolcott masonry work">
+      </figure>
+  </main>
+  <footer>
+    &copy;2023 by Clark and Wolcott Masonry and Construction.
+    &nbsp;|&nbsp; <a href="index.html">Home</a>
+  </footer>
+  <script id="cw-navfix-js">
+   (function(){
+     function init(){
+       var menus = document.querySelectorAll('li.wixui-dropdown-menu__item');
+       menus.forEach(function(li){
+         if(li.dataset.cwNavFix) return; li.dataset.cwNavFix = "1";
+         var ul = li.querySelector('ul[aria-hidden]'); if(!ul) return;
+         function toggle(e){ e.preventDefault(); e.stopPropagation();
+           var open = li.classList.toggle('cw-menu-open');
+           li.setAttribute('aria-expanded', open ? 'true' : 'false');
+           ul.setAttribute('aria-hidden', open ? 'false' : 'true'); }
+         li.addEventListener('click', function(e){
+           if(e.target.closest('a')) return;
+           toggle(e);
+         });
+       });
+       document.addEventListener('click', function(e){
+         document.querySelectorAll('li.wixui-dropdown-menu__item.cw-menu-open').forEach(function(li){
+           if(!li.contains(e.target)){ li.classList.remove('cw-menu-open');
+             li.setAttribute('aria-expanded','false');
+             var u=li.querySelector('ul[aria-hidden]'); if(u) u.setAttribute('aria-hidden','true'); }
+         });
+       });
+     }
+     if(document.readyState!=='loading') init(); else document.addEventListener('DOMContentLoaded', init);
+   })();
+  </script>
+</body>
+</html>

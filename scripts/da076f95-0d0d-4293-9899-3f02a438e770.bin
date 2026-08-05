@@ -1,0 +1,63 @@
+
+    function gtag(){dataLayer.push(arguments);}
+    !function(w, a) {
+        function config() {
+                gtag('config', 'UA-107564858-1', { send_page_view: false });
+        }
+
+        w.dataLayer = w.dataLayer || [];
+
+            if(w.consentPolicyManager && w.consentPolicyManager.initRan){
+                const { policy, defaultPolicy } = w.consentPolicyManager.getCurrentConsentPolicy();
+                setConsent('default', evaluateConsentPolicy(policy, defaultPolicy));
+            } else {
+                setConsent('default', { advertising: false, analytics: false, functional: false, waitForUpdate: 500 });
+            }
+
+            w.document.addEventListener("consentPolicyInitialized", ({ detail }) => {
+                setConsent('update', evaluateConsentPolicy(detail.policy, detail.defaultPolicy));
+            });
+
+            w.document.addEventListener("consentPolicyChanged", ({ detail }) => {
+                setConsent('update', detail.policy);
+            });
+
+            function evaluateConsentPolicy(policy, defaultPolicy) {
+              const { gdprEnforcedGeo } = w.wixTagManager.getConfig();
+                return defaultPolicy && gdprEnforcedGeo
+                    ? { ...policy, advertising: false, analytics: false }
+                    : policy
+            }
+
+            function setConsent(action, { advertising, analytics, functional, waitForUpdate }) {
+                gtag('consent', action, {
+                    'ad_storage': advertising ? 'granted' : 'denied',
+                    'ad_user_data': advertising ? 'granted' : 'denied',
+                    'ad_personalization': advertising ? 'granted' : 'denied',
+                    'analytics_storage': analytics ? 'granted' : 'denied',
+                    'functionality_storage': functional ? 'granted' : 'denied',
+                    'personalization_storage': 'granted',
+                    'security_storage': 'granted',
+                    ...waitForUpdate ? { 'wait_for_update': waitForUpdate } : {}
+                });
+            }
+
+        const hasInit = w.dataLayer.some(item => item[0] === 'js');
+        if (!hasInit) {
+            gtag('js', new Date());
+        }
+        
+        gtag('set', 'developer_id.dYzMzMD', true);
+
+            gtag('set', {'user_id': '464a9236-3e45-4105-8703-cab7ee3520bc'});
+
+        config()
+        w[a] = (w[a] && w[a].filter(c => c.name !== 'globalGtag')) || [];
+        w[a].push({
+            name: 'globalGtag',
+            report: gtag,
+            config: {
+                trackingId: 'UA-107564858-1'
+            }
+        });
+    }(window,"promoteAnalyticsChannels")

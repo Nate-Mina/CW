@@ -1,0 +1,10 @@
+# Regenerable caches (not source). The site still renders locally because these
+# exist on disk; a fresh clone would need `python serve.py --warm` to rebuild them.
+cdn/
+.cdncache/
+
+# OS / editor cruft
+Thumbs.db
+Desktop.ini
+*.tmp
+.DS_Store
