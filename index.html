@@ -736,6 +736,15 @@
 
 
   <style id="cw-navfix-style">
+  /* Offline/Pages fix: Wix hides the menu with .hidden-during-prewarmup until
+     its runtime JS runs. Offline / GitHub Pages has no runtime, so force it
+     visible. !important beats the inline/derived visibility:hidden. */
+  .hidden-during-prewarmup { visibility: visible !important; }
+  wix-dropdown-menu.hidden-during-prewarmup,
+  nav#comp-j7kyrphunavContainer,
+  header#SITE_HEADER { visibility: visible !important; }
+  #SITE_HEADER { min-height: 56px; }
+
    li.wixui-dropdown-menu__item.cw-menu-open > ul[aria-hidden]{ display:block !important; }
    li.wixui-dropdown-menu__item.cw-menu-open [aria-expanded]{ aria-expanded:true; }
    .SITE_PAGES, .Y3K28_.SITE_PAGES,
@@ -1105,5 +1114,16 @@
    })();
   </script>
 
+
+  (function(){
+    function showMenu(){
+      document.querySelectorAll('.hidden-during-prewarmup').forEach(function(el){
+        el.classList.remove('hidden-during-prewarmup');
+      });
+    }
+    if(document.readyState!=='loading') showMenu();
+    else document.addEventListener('DOMContentLoaded', showMenu);
+    window.addEventListener('load', showMenu);
+  })();
 </body>
 </html>

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cw-navfix-style">
+  /* Offline/Pages fix: Wix hides the menu with .hidden-during-prewarmup until
+     its runtime JS runs. Offline / GitHub Pages has no runtime, so force it
+     visible. !important beats the inline/derived visibility:hidden. */
+  .hidden-during-prewarmup { visibility: visible !important; }
+  wix-dropdown-menu.hidden-during-prewarmup,
+  nav#comp-j7kyrphunavContainer,
+  header#SITE_HEADER { visibility: visible !important; }
+  #SITE_HEADER { min-height: 56px; }
+</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gallery | Clark and Wolcott</title>
@@ -404,5 +414,16 @@
        document.addEventListener('click',function(){ d.classList.remove('open'); }); }
    })();
   </script>
+
+  (function(){
+    function showMenu(){
+      document.querySelectorAll('.hidden-during-prewarmup').forEach(function(el){
+        el.classList.remove('hidden-during-prewarmup');
+      });
+    }
+    if(document.readyState!=='loading') showMenu();
+    else document.addEventListener('DOMContentLoaded', showMenu);
+    window.addEventListener('load', showMenu);
+  })();
 </body>
 </html>
