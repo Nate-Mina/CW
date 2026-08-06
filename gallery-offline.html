@@ -22,6 +22,18 @@
   @media (max-width:460px){ .grid{column-count:1;} }
   footer { text-align:center; padding:26px 16px 40px; color:#8c7a66; font-size:.9rem; border-top:1px solid #2c2016; }
   footer a { color:var(--fire); text-decoration:none; }
+
+  .cw-nav{ display:flex; flex-wrap:wrap; gap:6px 22px; justify-content:center; align-items:center;
+    padding:14px 16px; background:#120c08; border-bottom:2px solid var(--fire);
+    font-family:"Times New Roman",Georgia,serif; position:sticky; top:0; z-index:100; }
+  .cw-nav a{ color:var(--cream); text-decoration:none; font-size:1.02rem; letter-spacing:.04em; padding:4px 2px; }
+  .cw-nav a:hover{ color:#fff; text-decoration:underline; }
+  .cw-nav-drop{ position:relative; }
+  .cw-nav-drop>span{ cursor:pointer; color:var(--cream); font-size:1.02rem; padding:4px 2px; }
+  .cw-nav-sub{ display:none; position:absolute; top:100%; left:0; background:#120c08;
+    border:1px solid #2c2016; border-top:2px solid var(--fire); min-width:190px; z-index:50; flex-direction:column; }
+  .cw-nav-sub a{ display:block; padding:9px 14px; }
+  .cw-nav-drop:hover .cw-nav-sub, .cw-nav-drop.open .cw-nav-sub{ display:flex; }
 </style>
   <style id="cw-navfix">
    /* Offline fix: Wix dropdown runtime is dead offline; make the "More Masonry
@@ -50,6 +62,22 @@
 
 </head>
 <body>
+<nav class="cw-nav">
+  <a href="index.html">Home</a>
+  <div class="cw-nav-drop">
+    <span tabindex="0">Masonry &#9662;</span>
+    <div class="cw-nav-sub">
+      <a href="pages/residential-masonry.html">Residential Masonry</a>
+      <a href="pages/c.html">Commercial Masonry</a>
+    </div>
+  </div>
+  <a href="pages/home-remodeling.html">Remodeling</a>
+  <a href="pages/restoration.html">Historic Restoration</a>
+  <a href="gallery-offline.html">Gallery</a>
+  <a href="pages/contact-now.html">Contact</a>
+  <a href="pages/reviews.html">Reviews</a>
+  <a href="tel:5852613180">CALL NOW</a>
+</nav>
   <header>
     <h1>Gallery</h1>
     <p>Below is a variety of works done by Clark &amp; Wolcott.</p>
@@ -456,5 +484,14 @@
    })();
   </script>
 
+
+  <script>
+   (function(){
+     var d=document.querySelector('.cw-nav-drop');
+     if(d){ var t=d.querySelector('span');
+       t.addEventListener('click',function(e){ e.stopPropagation(); d.classList.toggle('open'); });
+       document.addEventListener('click',function(){ d.classList.remove('open'); }); }
+   })();
+  </script>
 </body>
 </html>
