@@ -35,30 +35,6 @@
   .cw-nav-sub a{ display:block; padding:9px 14px; }
   .cw-nav-drop:hover .cw-nav-sub, .cw-nav-drop.open .cw-nav-sub{ display:flex; }
 </style>
-  <style id="cw-navfix">
-   /* Offline fix: Wix dropdown runtime is dead offline; make the "More Masonry
-      pages" submenu toggle via plain JS/CSS. !important needed to beat the
-      inline style="display:none" Wix puts on the submenu <ul>. */
-   li.wixui-dropdown-menu__item{ position:relative; cursor:pointer; }
-   li.wixui-dropdown-menu__item > ul[aria-hidden]{ display:none !important; position:absolute;
-     left:0; top:100%; z-index:60; background:#1a1410; border:1px solid #3a2a1c;
-     border-radius:6px; padding:6px 0; min-width:210px; list-style:none; margin:0;
-     box-shadow:0 8px 24px rgba(0,0,0,.55); }
-   li.wixui-dropdown-menu__item.cw-menu-open > ul[aria-hidden]{ display:block !important; }
-   li.wixui-dropdown-menu__item > ul[aria-hidden] a{ display:block; padding:8px 16px;
-     color:#f4e9d8; text-decoration:none; font-family:"Times New Roman",Georgia,serif; }
-   li.wixui-dropdown-menu__item > ul[aria-hidden] a:hover{ background:#2c2016; }
-  </style>
-
-  <style id="cw-navfix-style">
-   li.wixui-dropdown-menu__item.cw-menu-open > ul[aria-hidden]{ display:block !important; }
-   li.wixui-dropdown-menu__item.cw-menu-open [aria-expanded]{ aria-expanded:true; }
-   .SITE_PAGES, .Y3K28_.SITE_PAGES,
-   .SITE_PAGES_TRANSITION_GROUP, .uvik8H,
-   .i0StQr.theme-vars, .pTvOx2.wixui-page,
-   #gdmpa, .Containergdmpa, .wixui-page { height:auto !important; min-height:0 !important; }
-   .cw-pgrid{ margin-top:0 !important; }
-  </style>
 
 </head>
 <body>
@@ -418,71 +394,6 @@
     &copy;2023 by Clark and Wolcott Masonry and Construction.
     &nbsp;|&nbsp; <a href="index.html">Home</a>
   </footer>
-  <script id="cw-navfix-js">
-   (function(){
-     function init(){
-       var menus = document.querySelectorAll('li.wixui-dropdown-menu__item');
-       menus.forEach(function(li){
-         if(li.dataset.cwNavFix) return; li.dataset.cwNavFix = "1";
-         var ul = li.querySelector('ul[aria-hidden]'); if(!ul) return;
-         function toggle(e){ e.preventDefault(); e.stopPropagation();
-           var open = li.classList.toggle('cw-menu-open');
-           li.setAttribute('aria-expanded', open ? 'true' : 'false');
-           ul.setAttribute('aria-hidden', open ? 'false' : 'true'); }
-         li.addEventListener('click', function(e){
-           if(e.target.closest('a')) return;
-           toggle(e);
-         });
-       });
-       document.addEventListener('click', function(e){
-         document.querySelectorAll('li.wixui-dropdown-menu__item.cw-menu-open').forEach(function(li){
-           if(!li.contains(e.target)){ li.classList.remove('cw-menu-open');
-             li.setAttribute('aria-expanded','false');
-             var u=li.querySelector('ul[aria-hidden]'); if(u) u.setAttribute('aria-hidden','true'); }
-         });
-       });
-     }
-     if(document.readyState!=='loading') init(); else document.addEventListener('DOMContentLoaded', init);
-   })();
-  </script>
-
-  <script id="cw-navfix">
-   (function(){
-     function fix(){
-       var path = location.pathname;
-       var inPages = /\/pages\//.test(path);
-       function r(f){ return inPages ? '../'+f : f; }
-       var targets = {
-         'Home': inPages ? '../index.html' : 'index.html',
-         'Gallery': r('gallery-offline.html'),
-         'Remodeling': inPages ? 'home-remodeling.html' : 'pages/home-remodeling.html',
-         'Historic Restoration': inPages ? 'restoration.html' : 'pages/restoration.html',
-         'Chimney': inPages ? 'blank-1.html' : 'pages/blank-1.html',
-         'Contact': inPages ? 'contact-now.html' : 'pages/contact-now.html',
-         'Reviews': inPages ? 'reviews.html' : 'pages/reviews.html',
-         'Residential Masonry': inPages ? 'residential-masonry.html' : 'pages/residential-masonry.html',
-         'Commercial Masonry': inPages ? 'c.html' : 'pages/c.html'
-       };
-       var as = document.querySelectorAll('nav a, a.wixui-rich-text__text, li.wixui-dropdown-menu__item a');
-       as.forEach(function(a){
-         var t = (a.textContent || '').trim();
-         if(targets[t]){ a.setAttribute('href', targets[t]); a.removeAttribute('target'); }
-       });
-       var dd = document.querySelector('li.wixui-dropdown-menu__item');
-       if(dd && !dd.dataset.cwNavFix){
-         dd.dataset.cwNavFix = '1';
-         var btn = dd.querySelector('button[aria-label="More Masonry pages"]');
-         var trigger = dd.querySelector('div[role="button"][aria-expanded]') || dd.querySelector('[aria-expanded]');
-         var target = btn || trigger;
-         if(target){
-           target.addEventListener('click', function(e){ e.stopPropagation(); dd.classList.toggle('cw-menu-open'); });
-         }
-       }
-     }
-     if(document.readyState !== 'loading') fix();
-     else document.addEventListener('DOMContentLoaded', fix);
-   })();
-  </script>
 
 
   <script>
