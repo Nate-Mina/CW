@@ -770,6 +770,16 @@
    .i0StQr.theme-vars, .pTvOx2.wixui-page,
    #gdmpa, .Containergdmpa, .wixui-page { height:auto !important; min-height:0 !important; }
    .cw-pgrid{ margin-top:0 !important; }
+
+  /* Black contrast nav: force solid black bar + dropdowns (override Wix's
+     translucent gray) so the menu reads clearly on any page. */
+  header#SITE_HEADER,
+  nav#comp-j7kyrphunavContainer,
+  .cw-nav { background:#000000 !important; }
+  nav#comp-j7kyrphunavContainer ul.ITmfld,
+  li.wixui-dropdown-menu__item > ul[aria-hidden],
+  .cw-nav-sub { background:#000000 !important; border-color:#d4622a !important; }
+  header#SITE_HEADER { border-bottom:2px solid #d4622a !important; }
   </style>
 
 </head>
