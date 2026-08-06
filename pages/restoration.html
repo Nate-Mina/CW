@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cw-responsive">
+  /* Responsive nav: hamburger menu on small screens (GitHub Pages safe, no runtime) */
+  .cw-burger{ display:none; background:#1a120c; border:1px solid #d4622a; color:#f4e9d8;
+    font-size:1.5rem; line-height:1; cursor:pointer; padding:8px 12px; border-radius:6px; }
+  .cw-burger:focus{ outline:2px solid #d4622a; }
+  @media (max-width: 768px){
+    /* ---- Wix nav (index + subpages) ---- */
+    header#SITE_HEADER{ position:relative; }
+    .cw-burger{ display:inline-block; position:absolute; top:8px; right:12px; z-index:300; }
+    nav#comp-j7kyrphunavContainer ul.ITmfld{
+      display:none !important; flex-direction:column; position:absolute; top:100%; left:0;
+      width:100%; background:#120c08; border-top:2px solid #d4622a; padding:6px 0; z-index:250; }
+    nav#comp-j7kyrphunavContainer.cw-nav-open ul.ITmfld{ display:flex !important; }
+    nav#comp-j7kyrphunavContainer ul.ITmfld li.wixui-dropdown-menu__item{ width:100%; text-align:left; }
+    /* ---- Gallery custom nav ---- */
+    .cw-nav{ flex-direction:column; align-items:flex-start; gap:2px; }
+    .cw-nav .cw-burger{ position:static; align-self:flex-end; margin:2px 0 6px; }
+    .cw-nav > a, .cw-nav > .cw-nav-drop{ display:none; width:100%; }
+    .cw-nav.cw-nav-open > a, .cw-nav.cw-nav-open > .cw-nav-drop{ display:block; }
+    .cw-nav-sub{ position:static; border:none; box-shadow:none; padding-left:14px; }
+  }
+</style>
   
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
@@ -1134,5 +1156,35 @@ Let us revive your Historic property knowing you are in the right hands with Cla
     else document.addEventListener('DOMContentLoaded', showMenu);
     window.addEventListener('load', showMenu);
   })();
+
+  <script id="cw-responsive-nav">
+  (function(){
+    function initBurger(){
+      var wixNav = document.querySelector('nav#comp-j7kyrphunavContainer');
+      var galNav = document.querySelector('nav.cw-nav');
+      var nav = wixNav || galNav;
+      if(!nav || nav.querySelector('.cw-burger')) return;
+      var btn = document.createElement('button');
+      btn.className = 'cw-burger';
+      btn.setAttribute('aria-label','Toggle menu');
+      btn.setAttribute('aria-expanded','false');
+      btn.innerHTML = '\u2630';
+      if(wixNav){ (document.getElementById('SITE_HEADER')||wixNav).appendChild(btn); }
+      else { nav.appendChild(btn); }
+      function setOpen(open){
+        nav.classList.toggle('cw-nav-open', open);
+        btn.setAttribute('aria-expanded', open?'true':'false');
+        btn.innerHTML = open ? '\u2715' : '\u2630';
+      }
+      btn.addEventListener('click', function(e){ e.stopPropagation(); setOpen(!nav.classList.contains('cw-nav-open')); });
+      nav.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+      document.addEventListener('click', function(e){
+        if(!nav.contains(e.target) && e.target!==btn) setOpen(false);
+      });
+    }
+    if(document.readyState!=='loading') initBurger();
+    else document.addEventListener('DOMContentLoaded', initBurger);
+  })();
+  </script>
 </body>
 </html>
